@@ -33,6 +33,7 @@ function firstButtonData() {
     messageAlert.innerHTML =
       "<br>" + "<h1>NO ENTRY!</h1>" + "<img src=" + "PIC.png" + " >";
     messageAlert.style = "color:red;text-align: center;";
+    location.reload();
   }
 
   cleartext();
