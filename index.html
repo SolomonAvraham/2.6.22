@@ -12,12 +12,12 @@
     <hr />
     Name:
     <input type="text" id="first_input" placeholder="Name:" />
-    Brith Year:<input
-      type="number"
-      max="2022"
-      min="1990"
+    Brith-Date:<input
+      type="date"
+      min="1990-01-01"
+      max="2022-01-01"
       id="second_input"
-      placeholder="Year:"
+      placeholder="BrithDate:"
     />
     <button id="firstButton">SEND</button>
     <hr />
@@ -28,13 +28,35 @@
     <br />
 
     <div id="famliy_form">
-      <h1>Enter one Lastname, and Four Firstnames:</h1>
+      <h1>Sibling Details:</h1>
       <br />
-      <input id="first_names" type="text" placeholder="First Names:" />
+      <input
+        class="first_names_class"
+        id="first_names"
+        type="text"
+        placeholder="First Names:"
+      />
+      <input
+        class="first_names_class"
+        id="first_names"
+        type="text"
+        placeholder="First Names:"
+      />
+      <input
+        class="first_names_class"
+        id="first_names"
+        type="text"
+        placeholder="First Names:"
+      />
+      <input
+        class="first_names_class"
+        id="first_names"
+        type="text"
+        placeholder="First Names:"
+      />
       <input id="last_name" type="text" placeholder="Last Name:" />
       <button id="famliy_button">PRINT</button>
       <ul id="famliy_list"></ul>
-     
     </div>
 
     <script src="main.js"></script>

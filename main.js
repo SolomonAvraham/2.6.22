@@ -1,13 +1,13 @@
 function fullNameInput() {
   var x = document.getElementById("first_input");
-  x.style = "color:blue;";
   return x.value;
 }
 
-function yearInput() {
-  var yearInputData = document.getElementById("second_input");
-  yearInputData.style = "color:blue;";
-  return yearInputData.value;
+function birthDateInput() {
+  var birthDateInputData = document.getElementById("second_input");
+  var userBirthDate = "";
+  userBirthDate += birthDateInputData.value;
+  return userBirthDate;
 }
 
 function clearTextOne() {
@@ -19,23 +19,23 @@ document
   .getElementById("firstButton")
   .addEventListener("click", firstButtonData);
 
-
 function firstButtonData() {
-    var messageAlert = document.getElementById("alert_message");
-    
-    if (yearInput() < 2004) {
+  var messageAlert = document.getElementById("alert_message");
+  if (fullNameInput() && birthDateInput() != "") {
+    if (birthDateInput() <= "2004-01-01") {
       clearTextOne();
-    messageAlert.innerHTML = "<br>" + "<h1>WELCOME!</h1>";
-    messageAlert.style = "color:blue;text-align: center;";
-    messageAlert.onmouseover = () => {
-      messageAlert.style = "color:green;text-align: center;";
-    };
-  } else {
-    messageAlert.onmouseover = () => {};
-    messageAlert.innerHTML =
-      "<br>" + "<h1>NO ENTRY!</h1>" + "<img src=" + "PIC.png" + " >";
-    messageAlert.style = "color:red;text-align: center;";
-    location.reload();
+      messageAlert.innerHTML = "<br>" + "<h1>WELCOME!</h1>";
+      messageAlert.style = "color:blue;text-align: center;";
+      messageAlert.onmouseover = () => {
+        messageAlert.style = "color:green;text-align: center;";
+      };
+    } else {
+      messageAlert.onmouseover = () => {};
+      messageAlert.innerHTML =
+        "<br>" + "<h1>NO ENTRY!</h1>" + "<img src=" + "PIC.png" + " >";
+      messageAlert.style = "color:red;text-align: center;";
+      location.reload();
+    }
   }
 }
 
@@ -67,12 +67,11 @@ function famliyButtonInput() {
   for (var i = 0; i < 1; i++) {
     clearTextTwo();
     myArray.push(firstNames);
-    myArray[i] += list.value;
   }
   if (true) {
-    list.innerHTML += "<li>" + myArray[i] + "</li>";
+    list.innerHTML += "<li>" + myArray + "</li>";
   }
 
   console.log(myArray);
 }
-famliyButtonInput();
+// famliyButtonInput();
