@@ -5,9 +5,7 @@ function fullNameInput() {
 
 function birthDateInput() {
   var birthDateInputData = document.getElementById("second_input");
-  var userBirthDate = "";
-  userBirthDate += birthDateInputData.value;
-  return userBirthDate;
+  return birthDateInputData.value;
 }
 
 function clearTextOne() {
@@ -39,9 +37,18 @@ function firstButtonData() {
   }
 }
 
+// PART 2 //
+
 function firstNameInput() {
-  var fName = document.getElementById("first_names");
-  return fName.value;
+  var firstNameDate = document.querySelectorAll(".first_names_class");
+  var result = "";
+  for (var i = 0; i < firstNameDate.length; i++) {
+    result += firstNameDate[i].value + " " + lastNameInput() + "<br>";
+  }
+  var finalResult = (document.getElementById("famliy_list").innerHTML +=
+    "<li>" + result + "</li>");
+
+  return finalResult;
 }
 
 function lastNameInput() {
@@ -50,7 +57,8 @@ function lastNameInput() {
 }
 
 function clearTextTwo() {
-  document.getElementById("first_names").value = "";
+  var a = "";
+  document.querySelectorAll(".first_names_class").value(a);
   document.getElementById("last_name").value = "";
 }
 
@@ -59,19 +67,12 @@ document
   .addEventListener("click", famliyButtonInput);
 
 function famliyButtonInput() {
-  var firstNames = firstNameInput();
-  var lastName = lastNameInput();
-  var list = document.getElementById("famliy_list");
-  var myArray = [];
+  firstNameInput();
+  clearTextTwo();
 
-  for (var i = 0; i < 1; i++) {
-    clearTextTwo();
-    myArray.push(firstNames);
-  }
+
   if (true) {
-    list.innerHTML += "<li>" + myArray + "</li>";
   }
 
-  console.log(myArray);
+
 }
-// famliyButtonInput();
